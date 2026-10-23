@@ -86,8 +86,8 @@ drop policy if exists "Participants can view requests" on public.service_request
 create policy "Participants can view requests" on public.service_requests for select to authenticated using (auth.uid() = requester_id or auth.uid() = provider_id);
 drop policy if exists "Requester can create own request" on public.service_requests;
 create policy "Requester can create own request" on public.service_requests for insert to authenticated with check (auth.uid() = requester_id and auth.uid() <> provider_id);
-drop policy if exists "Participants can update request status" on public.service_requests;
-create policy "Participants can update request status" on public.service_requests for update to authenticated using (auth.uid() = requester_id or auth.uid() = provider_id) with check (auth.uid() = requester_id or auth.uid() = provider_id);
+-- Intentionally no direct UPDATE policy for service_requests. Add validated server-side
+-- status-transition RPCs so a participant cannot rewrite price or participant IDs.
 
 drop policy if exists "Users view own wallet transactions" on public.wallet_transactions;
 create policy "Users view own wallet transactions" on public.wallet_transactions for select to authenticated using (auth.uid() = user_id);
