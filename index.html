@@ -17,7 +17,7 @@
     <a href="#how" data-i18n="nav_how">How it works</a>
     <a href="#wallet" data-i18n="nav_wallet">Wallet</a>
   </nav>
-  <div class="top-actions"><button class="btn btn-quiet" id="langToggle" type="button" aria-label="Switch language">عربي</button><button class="btn btn-quiet" id="themeToggle" type="button" aria-label="Toggle theme">☾</button><a class="btn btn-primary nav-cta" href="#market" data-i18n="explore">Explore services</a></div>
+  <div class="top-actions"><button class="btn btn-outline" id="authOpenBtn" type="button">Sign in / Create account</button><span id="authUserLabel" class="auth-user-label hidden" aria-live="polite"></span><button class="btn btn-quiet" id="langToggle" type="button" aria-label="Switch language">عربي</button><button class="btn btn-quiet" id="themeToggle" type="button" aria-label="Toggle theme">☾</button><a class="btn btn-primary nav-cta" href="#market" data-i18n="explore">Explore services</a></div>
 </header>
 <main>
 <section class="hero shell" id="home">
@@ -55,8 +55,27 @@
 </main>
 <footer class="footer"><div class="shell footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark">M</span><span>MAQAM</span></a><p data-i18n="footer_text">Skills into opportunities.</p><span>© <span id="year"></span> MAQAM <span data-i18n="demo_footer">· Demonstration experience</span></span></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog id="authDialog" class="modal auth-modal" aria-labelledby="authTitle">
+  <form id="authForm">
+    <button class="modal-close" id="authCloseBtn" type="button" aria-label="Close">×</button>
+    <span class="eyebrow">MAQAM ACCOUNT</span>
+    <h2 id="authTitle">Welcome to MAQAM</h2>
+    <p id="authDescription">Create an account to join the community, or sign in to continue.</p>
+    <label><span>Full name</span><input id="authName" name="name" autocomplete="name" maxlength="80" placeholder="Your name"></label>
+    <label><span>Email</span><input id="authEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></label>
+    <label><span>Password</span><input id="authPassword" name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128" placeholder="At least 8 characters"></label>
+    <p id="authMessage" class="form-result" role="status" aria-live="polite"></p>
+    <button class="btn btn-primary full-btn" id="authSubmitBtn" type="submit">Sign in</button>
+    <button class="btn btn-outline full-btn" id="authModeBtn" type="button">Create a new account</button>
+    <button class="text-link auth-logout hidden" id="authLogoutBtn" type="button">Sign out</button>
+    <small class="auth-security-note">Use your own account. Never share your password or verification email.</small>
+  </form>
+</dialog>
 <dialog id="serviceDialog" class="modal"><form method="dialog"><button class="modal-close" aria-label="Close">×</button></form><div id="dialogContent"></div></dialog>
 <dialog id="offerDialog" class="modal offer-modal"><form method="dialog"><button class="modal-close" aria-label="Close">×</button></form><span class="eyebrow" data-i18n="offer_label">CONTRIBUTE TO THE COMMUNITY</span><h2 data-i18n="offer_modal_title">Share a skill</h2><p data-i18n="offer_modal_text">This concept demo doesn't publish real listings yet. Tell us what you would offer.</p><label><span data-i18n="skill_name">Service or skill</span><input id="offerName" required maxlength="80" placeholder="e.g. Logo design"></label><label><span data-i18n="points_price">Points requested</span><input id="offerPrice" type="number" min="1" max="100000" value="100" required></label><button class="btn btn-primary full-btn" id="submitOffer" type="button" data-i18n="save_demo_offer">Preview offer</button><p class="form-result" id="offerResult"></p></dialog>
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="supabase-auth.js"></script>
 </body>
 </html>
