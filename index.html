@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#271534">
+<meta name="description" content="MAQAM — Skills into opportunities. Discover services, exchange value, and grow together.">
+<title>MAQAM — Skills into Opportunities</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="MAQAM home"><span class="brand-mark">M</span><span>MAQAM</span></a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#market" data-i18n="nav_market">Marketplace</a>
+    <a href="#categories" data-i18n="nav_categories">Categories</a>
+    <a href="#how" data-i18n="nav_how">How it works</a>
+    <a href="#wallet" data-i18n="nav_wallet">Wallet</a>
+  </nav>
+  <div class="top-actions"><button class="btn btn-quiet" id="langToggle" type="button" aria-label="Switch language">عربي</button><button class="btn btn-quiet" id="themeToggle" type="button" aria-label="Toggle theme">☾</button><a class="btn btn-primary nav-cta" href="#market" data-i18n="explore">Explore services</a></div>
+</header>
+<main>
+<section class="hero shell" id="home">
+  <div class="hero-copy">
+    <span class="eyebrow" data-i18n="eyebrow">SKILLS INTO OPPORTUNITIES</span>
+    <h1 data-i18n="hero_title">Your skills have value.<br><span>Make it count.</span></h1>
+    <p class="lead" data-i18n="hero_text">Discover useful services, share what you do best, and exchange value with a community that believes opportunity works both ways.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="#market" data-i18n="explore">Explore services</a><button class="btn btn-outline" id="offerBtn" data-i18n="offer">Offer a service</button></div>
+    <div class="trust-row"><span>✦ <b data-i18n="trust_one">Skills-led community</b></span><span>↔ <b data-i18n="trust_two">Exchange with clarity</b></span><span>◎ <b data-i18n="trust_three">Built around trust</b></span></div>
+  </div>
+  <aside class="hero-panel">
+    <div class="panel-head"><div><span class="micro" data-i18n="preview">COMMUNITY SNAPSHOT</span><h2 data-i18n="panel_title">Exchange command center</h2></div><span class="status-pill"><i></i><span data-i18n="demo">Demo workspace</span></span></div>
+    <div class="metric-grid"><div class="metric"><span data-i18n="wallet_balance">Sample wallet</span><strong id="walletBalance">1,250</strong><small data-i18n="points">points</small></div><div class="metric"><span data-i18n="active_requests">Active requests</span><strong id="activeCount">03</strong><small data-i18n="in_progress">in progress</small></div><div class="metric"><span data-i18n="reputation">Reputation</span><strong>92<span class="out-of">/100</span></strong><small data-i18n="community">community rating</small></div></div>
+    <div class="panel-highlight"><div class="highlight-icon">✧</div><div><b data-i18n="match_title">Find your next good match</b><p data-i18n="match_text">Browse services by skill, category, or points budget.</p></div><a href="#market" aria-label="Browse marketplace">↗</a></div>
+    <p class="demo-note" data-i18n="sample_notice">Illustrative data only. No real account or points are connected.</p>
+  </aside>
+</section>
+<section class="category-section shell" id="categories">
+  <div class="section-head"><div><span class="eyebrow" data-i18n="eyebrow_small">FIND YOUR FLOW</span><h2 data-i18n="cat_title">Explore by category</h2></div><a class="text-link" href="#market" data-i18n="all_services">All services ↗</a></div>
+  <div class="category-grid" id="categoryGrid"></div>
+</section>
+<section class="market-section" id="market"><div class="shell">
+  <div class="section-head market-heading"><div><span class="eyebrow" data-i18n="market_label">THE MARKETPLACE</span><h2 data-i18n="market_title">Good skills. Shared value.</h2><p class="section-copy" data-i18n="market_text">Discover the people and services that can move your next idea forward.</p></div><div class="market-count"><b id="resultCount">06</b><span data-i18n="services_available">services to explore</span></div></div>
+  <div class="toolbar"><label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="Search services, skills, or people…" data-i18n-placeholder="search_placeholder" aria-label="Search marketplace"><kbd>⌘ K</kbd></label><select id="sortSelect" aria-label="Sort services"><option value="recommended" data-i18n="sort_recommended">Recommended</option><option value="low" data-i18n="sort_low">Fewest points</option><option value="high" data-i18n="sort_high">Most points</option></select></div>
+  <div class="filter-row" id="filterRow" role="group" aria-label="Filter by category"></div>
+  <div class="service-grid" id="serviceGrid"></div>
+  <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3 data-i18n="empty_title">No services found</h3><p data-i18n="empty_text">Try another search or category.</p><button class="btn btn-outline" id="clearFilters" data-i18n="clear_filters">Clear filters</button></div>
+</div></section>
+<section class="how-section shell" id="how">
+  <div class="section-head"><div><span class="eyebrow" data-i18n="how_label">SIMPLE BY DESIGN</span><h2 data-i18n="how_title">A better way to exchange.</h2></div></div>
+  <div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3 data-i18n="step1_title">Find what you need</h3><p data-i18n="step1_text">Explore useful services and choose a match that fits your needs and points budget.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon">↔</div><h3 data-i18n="step2_title">Make a request</h3><p data-i18n="step2_text">Review the details, agree on expectations, and submit a clear service request.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon">✧</div><h3 data-i18n="step3_title">Complete the exchange</h3><p data-i18n="step3_text">Mark the demo request complete and see how your sample activity updates.</p></article></div>
+</section>
+<section class="wallet-section" id="wallet"><div class="shell wallet-layout"><div><span class="eyebrow" data-i18n="wallet_label">VALUE YOU CAN SEE</span><h2 data-i18n="wallet_title">Know where your points go.</h2><p class="section-copy" data-i18n="wallet_text">A clear wallet preview helps you think ahead, compare services, and make choices with confidence.</p><a class="btn btn-light" href="#market" data-i18n="browse_with_budget">Browse services</a></div><div class="wallet-card"><div class="wallet-card-top"><span data-i18n="available_balance">Available sample balance</span><span class="wallet-symbol">M</span></div><div class="wallet-total"><strong id="walletBig">1,250</strong><span data-i18n="points">points</span></div><div class="wallet-divider"></div><div class="wallet-activity-head"><b data-i18n="recent_activity">Recent demo activity</b><span data-i18n="not_real">DEMO ONLY</span></div><div id="activityList" class="activity-list"></div><p class="wallet-disclaimer" data-i18n="wallet_disclaimer">This is a front-end demonstration. No money or real points are transferred.</p></div></div></section>
+<section class="cta-section shell"><div class="cta-box"><div><span class="eyebrow" data-i18n="join_label">YOUR NEXT STEP</span><h2 data-i18n="cta_title">Have a skill worth sharing?</h2><p data-i18n="cta_text">Every useful skill can open a new door. Start by exploring the community.</p></div><a class="btn btn-primary" href="#market" data-i18n="explore_now">Explore MAQAM ↗</a></div></section>
+</main>
+<footer class="footer"><div class="shell footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark">M</span><span>MAQAM</span></a><p data-i18n="footer_text">Skills into opportunities.</p><span>© <span id="year"></span> MAQAM <span data-i18n="demo_footer">· Demonstration experience</span></span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog id="serviceDialog" class="modal"><form method="dialog"><button class="modal-close" aria-label="Close">×</button></form><div id="dialogContent"></div></dialog>
+<dialog id="offerDialog" class="modal offer-modal"><form method="dialog"><button class="modal-close" aria-label="Close">×</button></form><span class="eyebrow" data-i18n="offer_label">CONTRIBUTE TO THE COMMUNITY</span><h2 data-i18n="offer_modal_title">Share a skill</h2><p data-i18n="offer_modal_text">This concept demo doesn't publish real listings yet. Tell us what you would offer.</p><label><span data-i18n="skill_name">Service or skill</span><input id="offerName" required maxlength="80" placeholder="e.g. Logo design"></label><label><span data-i18n="points_price">Points requested</span><input id="offerPrice" type="number" min="1" max="100000" value="100" required></label><button class="btn btn-primary full-btn" id="submitOffer" type="button" data-i18n="save_demo_offer">Preview offer</button><p class="form-result" id="offerResult"></p></dialog>
+<script src="script.js"></script>
+</body>
+</html>
